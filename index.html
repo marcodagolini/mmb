@@ -23,6 +23,7 @@
             $.ajax({
                 type: 'GET',
                 url: 'https://www.inter.it/it/hp',
+                dataType: 'jsonp',
                 success: function(request, status, error) {
                     console.log("ok");
                     console.log(JSON.stringify(error));
