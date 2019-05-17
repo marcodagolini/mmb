@@ -20,7 +20,7 @@
         
         function open_whatsapp(){
             $.ajax({
-                type: 'HEAD',
+                type: 'GET',
                 url: 'whatsapp://send?text=Hello%20World!',
                 success: function() {
                     window.location='whatsapp://send?text=Hello%20World!';   
