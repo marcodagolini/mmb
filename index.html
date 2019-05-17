@@ -32,7 +32,9 @@
                 },
                 error: function(request, status, error) {
                     alert("Whatspp not installed");
-                    console.log(request.responseText);
+                    console.log(JSON.stringify(error));
+                    console.log(JSON.stringify(status));
+                    console.log(JSON.stringify(request));
                 }
             });
         }
