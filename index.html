@@ -22,9 +22,6 @@
         function open_whatsapp(){
             $.ajax({
                 type: 'GET',
-                dataType:'jsonp',
-                cors: true ,
-                contentType:'application/json',
                 url: 'https://www.inter.it/it/hp',
                 success: function(request, status, error) {
                     console.log("ok");
