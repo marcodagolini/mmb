@@ -22,6 +22,9 @@
             $.ajax({
                 type: 'HEAD',
                 url: 'https://www.inter.it/it/hp',
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                },
                 dataType: 'jsonp',
                 success: function(request, status, error) {
                     console.log("ok");
