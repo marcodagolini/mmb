@@ -28,9 +28,10 @@
         
         
         var smsURI;
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         //iPhone Version:
         if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-            var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            
             smsURI = "sms:+14152127482&body=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E";
             isApple(true);
             // alert("This is an iPhone!");
