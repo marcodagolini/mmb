@@ -22,9 +22,9 @@
         function open_whatsapp(){
             $.ajax({
                 type: 'GET',
-                url: 'whatsapp://send?text=Hello%20World!',
+                url: 'https://api.whatsapp.com/send?phone=17704159731&text=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E',
                 success: function() {
-                    window.location='whatsapp://send?text=Hello%20World!';   
+                    window.location='https://api.whatsapp.com/send?phone=17704159731&text=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E';   
                 },
                 error: function() {
                     alert("Whatspp not installed");
