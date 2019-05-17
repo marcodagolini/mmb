@@ -30,8 +30,9 @@
                 success: function() {
                     window.location='https://api.whatsapp.com/send?phone=17704159731&text=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E';   
                 },
-                error: function() {
+                error: function(request, status, error) {
                     alert("Whatspp not installed");
+                    console.log(request.responseText);
                 }
             });
         }
