@@ -19,6 +19,19 @@
     <script type="text/javascript">
         
         
+        function open_whatsapp(){
+            $.ajax({
+                type: 'HEAD',
+                url: 'whatsapp://send?text=Hello%20World!',
+                success: function() {
+                    window.location='whatsapp://send?text=Hello%20World!';   
+                },
+                error: function() {
+                    alert("Whatspp not installed");
+                }
+            });
+        }
+        
         function isApple(trueOrFalse){
             if(trueOrFalse){
                 $('#appleDiv').css('display', 'inline');
