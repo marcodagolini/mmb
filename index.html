@@ -28,7 +28,7 @@
         
         
         var smsURI;
-        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
         //iPhone Version:
         if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
             
