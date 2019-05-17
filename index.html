@@ -32,14 +32,14 @@
         var isMacLike = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
         var isIOS = /(iPhone|iPod|iPad)/i.test(navigator.platform);
         //iPhone Version:
-        if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+        if (isMacLike || isIOS) {
             
             smsURI = "sms:+14152127482&body=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E";
             isApple(true);
             // alert("This is an iPhone!");
         }
         //Android Version:
-        if (navigator.userAgent.match(/android/i)) {
+        else {
             smsURI = "sms:+14152127482?body=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E";
             isApple(false);
             // alert("This is an Android device!");
