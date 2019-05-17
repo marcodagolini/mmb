@@ -15,15 +15,29 @@
     <script src="https://static.cdn-apple.com/businesschat/start-chat-button/2/index.js"></script>
 
     <script type="text/javascript">
+        
+        
+        function isApple(trueOrFalse){
+            if(trueOrFalse){
+                $('#appleDiv').css('display', 'inline');
+                $('#conversate').css('display', 'inline');
+            } else{
+                //do things for Android
+            }
+        }
+        
+        
         var smsURI;
         //iPhone Version:
         if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
             smsURI = "sms:+14152127482&body=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E";
+            isApple(true);
             // alert("This is an iPhone!");
         }
         //Android Version:
         if (navigator.userAgent.match(/android/i)) {
             smsURI = "sms:+14152127482?body=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E";
+            isApple(false);
             // alert("This is an Android device!");
         }
         openPage = function() {
@@ -73,7 +87,7 @@
 
     <img src="icons/offer.png">
     
-    <div id ="conversate">
+    <div id ="conversate" style="visibility:hidden;">
 
     <div class="a">
         <h3>Do you wanna contact us? Click on the button here below!</h3>
@@ -81,15 +95,15 @@
 
     <br>
 
-    <div>
-        <a href="javascript:openPage()">
+    <div id="smsDiv" style="visibility:hidden;">
+        <a href="javascript:openPage()" style="visibility:hidden;">
             <img src="icons/sms.png" width="100" height="auto">
         </a>
     </div>
 
     <br>
 
-    <div>
+    <div id="whatsappDiv" style="visibility:hidden;">
         <a href="https://api.whatsapp.com/send?phone=17704159731&text=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E">
             <img src="icons/wa.png" width="100" height="auto">
         </a>
@@ -98,8 +112,7 @@
     <br>
 
 
-    <div
-        class="apple-business-chat-banner-container"
+    <div id="appleDiv" class="apple-business-chat-banner-container" style="visibility:hidden;"
         data-apple-business-id="5fc69572-f4b4-11e7-97e6-b97859c148c8"
         data-apple-business-intent-id="tom_abc"
         data-apple-business-group-id="Upgrade questions"
