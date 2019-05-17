@@ -29,7 +29,8 @@
         
         
         var smsURI;
-        var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        var isMacLike = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
+        var isIOS = /(iPhone|iPod|iPad)/i.test(navigator.platform);
         //iPhone Version:
         if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
             
