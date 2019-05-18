@@ -63,6 +63,26 @@
         }
         
         $(document).ready(function() {
+            
+            var isMobile = {
+    Windows: function() {
+        console.log(navigator.userAgent);
+    },
+    Android: function() {
+        console.log(navigator.userAgent);
+    },
+    BlackBerry: function() {
+        console.log(navigator.userAgent);
+    },
+    iOS: function() {
+        console.log(navigator.userAgent);
+    },
+    any: function() {
+        console.log(navigator.userAgent);
+    }
+};
+            
+            
             var smsURI;
             var isMacLike = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
             var isIOS = /(iPhone|iPod|iPad)/i.test(navigator.platform);
