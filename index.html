@@ -19,36 +19,7 @@
     <script>
         
         
-        function open_whatsapp(){
-            $.getJSON("https://api.whatsapp.com/send?phone=17704159731&text=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E?callback=?", function(result){
-                //response data are now in the result variable
-                alert(result);
-            });
-            /*
-            $.getJSON({
-                type: 'HEAD',
-                url: 'https://www.inter.it/it/hp',
-                headers: {
-                    'Access-Control-Allow-Origin': '*'
-                },
-                dataType: 'html',
-                success: function(request, status, error) {
-                    console.log("ok");
-                    console.log(JSON.stringify(error));
-                    console.log(JSON.stringify(status));
-                    console.log(JSON.stringify(request));
-                    // window.location='https://api.whatsapp.com/send?phone=17704159731&text=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E';   
-                },
-                error: function(request, status, error) {
-                    console.log("myerror!!!!");
-                    console.log(JSON.stringify(error));
-                    console.log(JSON.stringify(status));
-                    console.log(JSON.stringify(request));
-                }
-            });
-            */
-            
-        }
+       
         
         
         function mobileCheck() {
@@ -62,7 +33,6 @@
             if(trueOrFalse){
                 $('#appleDiv').css('display', 'inline');
                 $('#conversate').css('display', 'inline');
-                open_whatsapp();
             } else{
                 if(mobileCheck()){
                     $('#smsDiv').css('display', 'inline');
