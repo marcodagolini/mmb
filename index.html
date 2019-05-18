@@ -41,19 +41,6 @@
                 $('#appleDiv').css('display', 'inline');
                 $('#conversate').css('display', 'inline');
                 
-                window.lpGetAuthenticationToken = function(callback) {
-                        console.log("inside lpGetAuthenticationToken!");
-                        var token = "tom_bot";
-                        callback(token);
-                    };
-                    
-                    lpTag.sdes.push({
-                        "type": "ctmrinfo",
-                        "info": {
-                            customerId: '1'
-                        }
-                    });
-                
             } else{
                 if(mobileCheck()){
                     $('#smsDiv').css('display', 'inline');
