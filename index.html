@@ -40,45 +40,40 @@
                 $('#appleDiv').css('display', 'inline');
                 $('#conversate').css('display', 'inline');
                 
-                lpTag.sdes.push({
-                        "type": "ctmrinfo",
-                        "info": {
-                            customerId: '1'
-                        }
-                    });
-                    // Authentication JSMethod for LiveEngage
-                    var lpGetAuthenticationToken = function(callback) {
+                window.lpGetAuthenticationToken = function(callback) {
                         console.log("inside lpGetAuthenticationToken!");
                         var token = "tom_bot";
-                        if (token) {
-                            console.log("got token! " + token);
-                            console.log("calling callback with token...");
-                            callback(token);
-                        }
+                        callback(token);
                     };
-                
-            } else{
-                if(mobileCheck()){
-                    $('#smsDiv').css('display', 'inline');
-                    $('#conversate').css('display', 'inline');
-                } else{
+                    
                     lpTag.sdes.push({
                         "type": "ctmrinfo",
                         "info": {
                             customerId: '1'
                         }
                     });
-                    // Authentication JSMethod for LiveEngage
-                    var lpGetAuthenticationToken = function(callback) {
+                
+            } else{
+                if(mobileCheck()){
+                    $('#smsDiv').css('display', 'inline');
+                    $('#conversate').css('display', 'inline');
+                } else{
+                    
+                    window.lpGetAuthenticationToken = function(callback) {
                         console.log("inside lpGetAuthenticationToken!");
                         var token = "tom_bot";
-                        if (token) {
-                            console.log("got token! " + token);
-                            console.log("calling callback with token...");
-                            callback(token);
-                        }
+                        callback(token);
                     };
-                    // do nothing
+                    
+                    lpTag.sdes.push({
+                        "type": "ctmrinfo",
+                        "info": {
+                            customerId: '1'
+                        }
+                    });
+                    
+                    
+                   
                 }
             }
         }
