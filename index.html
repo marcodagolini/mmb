@@ -22,6 +22,26 @@
     <script src="https://static.cdn-apple.com/businesschat/start-chat-button/2/index.js"></script>
 
     <script>
+       
+       
+       
+       function authenticate(){
+          window.lpGetAuthenticationToken = function(callback) {
+             console.log("inside lpGetAuthenticationToken!");
+             var token = "tom_bot";
+             callback(token);
+          };
+          setTimeout(function(){
+             var CurrentLocation = window.location.href;
+             lpTag.newPage(CurrentLocation, {section: "tomtest"});
+             lpTag.sdes.push({
+                "type": "ctmrinfo",
+                "info": {
+                   customerId: '1'
+                }
+             });
+          }, 3000);
+       }
         
         
        $(document).ready(function() {
@@ -36,41 +56,15 @@
              if(trueOrFalse){
                 $('#appleDiv').css('display', 'inline');
                 $('#conversate').css('display', 'inline');
-                
-                 window.lpGetAuthenticationToken = function(callback) {
-                        console.log("inside lpGetAuthenticationToken!");
-                        var token = "tom_bot";
-                        callback(token);
-                    };
-                    var CurrentLocation = window.location.href;
-                    lpTag.newPage(CurrentLocation, {section: "tomtest"});
-                    lpTag.sdes.push({
-                        "type": "ctmrinfo",
-                        "info": {
-                            customerId: '1'
-                        }
-                    });
+                authenticate();
+                 
              } else{
                 if(mobileCheck()){
                     $('#smsDiv').css('display', 'inline');
                     $('#conversate').css('display', 'inline');
                 } else{
                     
-                    window.lpGetAuthenticationToken = function(callback) {
-                        console.log("inside lpGetAuthenticationToken!");
-                        var token = "tom_bot";
-                        callback(token);
-                    };
-                   setTimeout(function(){
-                      var CurrentLocation = window.location.href;
-                      lpTag.newPage(CurrentLocation, {section: "tomtest"});
-                      lpTag.sdes.push({
-                         "type": "ctmrinfo",
-                         "info": {
-                            customerId: '1'
-                         }
-                      });
-                   }, 3000);
+                    authenticate();
                 }
              }
           }
