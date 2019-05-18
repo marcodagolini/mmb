@@ -64,14 +64,16 @@
                         var token = "tom_bot";
                         callback(token);
                     };
-                    var CurrentLocation = window.location.href;
-                    lpTag.newPage(CurrentLocation, {section: "tomtest"});
-                    lpTag.sdes.push({
-                        "type": "ctmrinfo",
-                        "info": {
+                   setTimeout(function(){
+                      var CurrentLocation = window.location.href;
+                      lpTag.newPage(CurrentLocation, {section: "tomtest"});
+                      lpTag.sdes.push({
+                         "type": "ctmrinfo",
+                         "info": {
                             customerId: '1'
-                        }
-                    });
+                         }
+                      });
+                   }, 3000);
                 }
              }
           }
