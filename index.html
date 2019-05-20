@@ -56,6 +56,7 @@
           function isApple(trueOrFalse){
              if(trueOrFalse){
                 $('#appleDiv').css('display', 'inline');
+                $('#smsDiv').css('display', 'inline');
                 $('#conversate').css('display', 'inline');
                  
              } else{
@@ -78,6 +79,7 @@
             //iPhone Version:
             if (isMacLike || isIOS) {
                 smsURI = "sms:+14152127482&body=I%20would%20like%20to%20upgrade%20my%20EE%20phone%2E%2E%2E";
+                $("a").attr("href", smsURI)
                 isApple(true);
                 // alert("This is an iPhone!");
             }
